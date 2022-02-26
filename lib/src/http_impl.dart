@@ -2049,6 +2049,16 @@ typedef bool BadCertificateCallback(X509Certificate cr, String host, int port);
 
 class AltHttpClient extends _HttpClient {
   AltHttpClient({SecurityContext context}) : super(context);
+
+  @override
+  set connectionFactory(Future<ConnectionTask<Socket>> Function(Uri url, String proxyHost, int proxyPort) f) {
+    // TODO: implement connectionFactory
+  }
+
+  @override
+  set keyLog(Function(String line) callback) {
+    // TODO: implement keyLog
+  }
 }
 
 class _HttpClient implements HttpClient {
@@ -2423,6 +2433,16 @@ class _HttpClient implements HttpClient {
   }
 
   static Map<String, String> _platformEnvironmentCache = Platform.environment;
+
+  @override
+  set connectionFactory(Future<ConnectionTask<Socket>> Function(Uri url, String proxyHost, int proxyPort) f) {
+    // TODO: implement connectionFactory
+  }
+
+  @override
+  set keyLog(Function(String line) callback) {
+    // TODO: implement keyLog
+  }
 }
 
 class _HttpConnection extends LinkedListEntry<_HttpConnection>
